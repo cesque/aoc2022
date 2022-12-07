@@ -1,0 +1,25 @@
+ƛ¶P;¤€÷ƛ⌈y⌊;$
+ṪƛḢ4Ḟ;∩ƛṠ;→h
+
+(
+    ←h:
+        n2i 1-:→t # to index
+        i
+
+        ←h n1i 1-:→f # from index
+        i n0i Ẏ # slice n from i
+
+        Ṙ$J
+        
+        ←t$Ȧ
+ 
+        :←f # from index
+        i n0i ȯ
+
+        ←f$Ȧ
+    ⟑; # <--- if this line is removed, it results in a LazyList RecursionError: maximum recursion depth exceeded
+    
+    →h
+)
+
+←hƛh;ṅ,

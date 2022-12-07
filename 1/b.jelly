@@ -1,0 +1,9 @@
+§ṢṚs3ḢS
+
+§           sum all sublists
+ Ṣ          sort
+  Ṛ         reverse
+   s3       split into chunks of length 3
+     Ḣ      take the first chunk
+      S     sum that chunk
+    

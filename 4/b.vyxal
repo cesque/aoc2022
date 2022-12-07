@@ -1,0 +1,6 @@
+# run with `vyxal b.vyxal afṠP test.txt`
+# ƛøS⌐ƛ\-€⌊;;'ƛ÷ṡ;÷↔;L
+
+# 'øS⌐ƛ\-€⌊÷ṡ;÷↔;L
+# '\,/\-/⌊ƛ÷ṡ;÷↔;L # better parsing, from codegolf chatroom
+'⌐\-/⌊ƛ÷ṡ;÷↔;L # split by comma operator

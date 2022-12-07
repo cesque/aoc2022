@@ -1,0 +1,41 @@
+eØa×58+38
+
+# helper function for getting offset amount to subtract from letter character code
+# to get the score for each letter, which are: (a = 0, z = 26, A = 27, Z=52)
+eØa									check if array of lowercase letters(Øa) contains(e) current letter
+										0 if letter is caps, 1 if lowercase
+   ×58								0 if letter is caps, 58 if lowercase (lowercase are
+										worth less score, but have higher character codes)
+	  +38							38 if letter is caps, 96 if lowercase
+# thus we end up with:
+# a -- char code:  97 -- offset: 96 -- score:  97 - 96 = 1
+# z -- char code: 122 -- offset: 96 -- score: 122 - 96 = 26
+# A -- char code:  65 -- offset: 38 -- score:  27 - 38 = 27
+# Z -- char code:  90 -- offset: 38 -- score:  90 - 38 = 52
+
+ŒHœ&ƝḢḢµç_@O
+
+# helper function for dealing with an individual string, to get the
+# score of whichever character exists in one half of the string but not the other
+
+ŒH									split string in half(ŒH)
+  œ&Ɲ								apply intersection(œ&) of all pairs of neighbouring elements(Ɲ)
+	 Ḣ								get the first element(Ḣ), since our list was of form [[...], [...]]
+	 									and now is form [[...]], so we basically unwrap it
+	  Ḣ								get the first element(Ḣ) again, since we can find duplicate unmatched characters
+	  									but we only care about WHICH character it is and not how many
+	   µ							separate previous code context from what follows
+	    ç							run above helper function(ç) to get amount to subtract from character code
+		   O 						get ordinal(O) of character i.e. character code
+		 _@							subtract(_) offset from ordinal. we have to swap the order
+		 								of the operands(@) so this math is correct
+
+Ỵç€$S
+
+## main function
+
+Ỵ									split string by newlines(Ỵ)
+ ç€									map(€) above helper function(ç) over each line
+   $								group previous code to separate previous code context from what follows
+										not sure why this is needed, but it crashes without it :(
+	S								sum all scores
